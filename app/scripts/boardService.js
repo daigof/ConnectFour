@@ -71,12 +71,24 @@ factory('boardService',[ '$http', function($http) {
 
     };
 
+    var clearBoard = function(){
+      board = [
+        [' ',' ',' ',' ',' ',' ',' '],
+        [' ',' ',' ',' ',' ',' ',' '],
+        [' ',' ',' ',' ',' ',' ',' '],
+        [' ',' ',' ',' ',' ',' ',' '],
+        [' ',' ',' ',' ',' ',' ',' '],
+        [' ',' ',' ',' ',' ',' ',' '] ];
+
+    };
+
 //returns a funtion that returns a promise. Handling response data is part of Controller responsibility
 return {
   pushItem : pushItem,
   checkWin: checkWin,
   board: boardF,
-  redraw: redraw
+  redraw: redraw,
+  clearBoard: clearBoard
 };
 
 
