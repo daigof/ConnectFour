@@ -14,6 +14,7 @@ angular.module('connectFourApp')
 
   this.submitP1 = function(){
     boardService.pushItem('X',$scope.player1Column);
+      boardService.checkWin();
 
 
     console.log(boardService.board);

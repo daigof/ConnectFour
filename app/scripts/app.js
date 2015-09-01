@@ -30,6 +30,10 @@ angular
         controller: 'Player2Ctrl',
         controllerAs: 'player2'
       })
+      .when('/board', {
+        templateUrl: 'views/board.html',
+        controller: 'BoardController'
+      })
       .otherwise({
         redirectTo: '/'
       });
