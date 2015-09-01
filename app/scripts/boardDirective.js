@@ -6,9 +6,10 @@ angular.module('connectFourApp')
   return {
     restrict: 'E',
     link: function(scope) {
-      scope.board = boardService.board;
+      scope.board = JSON.parse(window.sessionStorage.getItem('board'));
+      scope.board2 = boardService.board;
     },
-    template: "<div class='well'><hr/>{{board}}<hr/></div>"
+    template: "<div class='well'><hr/>{{board2}}<hr/></div>"
   };
 
 }]);

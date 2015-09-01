@@ -23,6 +23,8 @@ factory('boardService',[ '$http', function($http) {
         }
       }
 
+      window.sessionStorage.setItem('board', JSON.stringify(board));
+
 
     };
 
