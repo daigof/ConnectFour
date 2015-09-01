@@ -23,6 +23,9 @@ factory('boardService',[ '$http', function($http) {
         }
       }
 
+      //HERE it should GO AJAX $http.put method to save the state of the board
+      //I did it with sessionStorage because no backend setup
+
       window.sessionStorage.setItem('board', JSON.stringify(board));
 
 
@@ -60,11 +63,19 @@ factory('boardService',[ '$http', function($http) {
        return $http.get('#/board');
     };
 
+    var boardF = function(){
+      //HERE it should go the http.get method to retrieve the state of the Board
+      //beacuse no backend I simply return the board variable
+      return board;
+
+
+    };
+
 //returns a funtion that returns a promise. Handling response data is part of Controller responsibility
 return {
   pushItem : pushItem,
   checkWin: checkWin,
-  board: board,
+  board: boardF,
   redraw: redraw
 };
 
