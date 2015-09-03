@@ -6,19 +6,19 @@ factory('boardService',[ '$http', function($http) {
 
 
   var board = [
-    [' ',' ',' ',' ',' ',' ',' '],
-    [' ',' ',' ',' ',' ',' ',' '],
-    [' ',' ',' ',' ',' ',' ',' '],
-    [' ',' ',' ',' ',' ',' ',' '],
-    [' ',' ',' ',' ',' ',' ',' '],
-    [' ',' ',' ',' ',' ',' ',' '] ];
+    ['X','X','X','X','X','X','X'],
+    ['X','X','X','X','X','X','X'],
+    ['X','X','X','X','X','X','X'],
+    ['X','X','X','X','X','X','X'],
+    ['X','X','X','X','X','X','X'],
+    ['X','X','X','X','X','X','X']
+  ];
 
     var pushItem = function(player, column){
 
-      for(var i = 0; i < board[column].length; i++){
-        console.log(board[column][i]);
-        if (board[column][i] === ' '){
-            board[column][i] = player;
+      for(var i = 0; i < 6; i++){
+        if (board[i][column] === 'X'){
+            board[i][column] = player;
             break;
         }
       }
@@ -35,14 +35,14 @@ factory('boardService',[ '$http', function($http) {
       for(var i = 0; i < 6; i++){
         for(var j = 0; j < 7; j++){
           if(j < 4){
-            if (board[i][j] === board[i][j+1] && board[i][j] === board[i][j+2] && board[i][j] === board[i][j+3]  && board[i][j] !== ' ' ){
+            if (board[i][j] === board[i][j+1] && board[i][j] === board[i][j+2] && board[i][j] === board[i][j+3]  && board[i][j] !== 'X' ){
               console.log(board[i][j],' WON');
               window.alert (board[i][j]+' WON');
           }
         }
 
           if(i < 3){
-            if (board[i][j] === board[i+1][j] && board[i+2][j] === board[i][j] && board[i][j] === board[i+3][j]  && board[i][j] !== ' ' ){
+            if (board[i][j] === board[i+1][j] && board[i+2][j] === board[i][j] && board[i][j] === board[i+3][j]  && board[i][j] !== 'X' ){
               console.log(board[i][j],' WON');
               window.alert (board[i][j]+' WON');
           }

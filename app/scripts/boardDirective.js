@@ -9,7 +9,7 @@ angular.module('connectFourApp')
       scope.board = JSON.parse(window.sessionStorage.getItem('board'));
       scope.board2 = boardService.board();
     },
-    template: "<div class='well board'><hr/>{{board2}}<hr/></div>"
+    templateUrl: "views/boardTemplate.html"
   };
 
 }]);

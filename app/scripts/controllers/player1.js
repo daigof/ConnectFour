@@ -13,7 +13,7 @@ angular.module('connectFourApp')
   $scope.player1Column = '0';
 
   this.submitP1 = function(){
-    boardService.pushItem('X',$scope.player1Column);
+    boardService.pushItem('1',$scope.player1Column);
       boardService.checkWin();
 
 
